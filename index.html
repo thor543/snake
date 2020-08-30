@@ -13,30 +13,78 @@
 
 
 
-.wrap{
 
-    width: 1200px; 
-    margin: 0;
+
+
+.wrap{
+    background-image: linear-gradient(-45deg,#fffaf0,#f8c3c1);
+    width: 420px;
+    margin: auto;
+    
     display: flex;
     flex-direction: column;
     
+   
+    overflow:visible;
 }
 
-.wrap .item{
-   flex-wrap: wrap;
-}
-
-
-
-
-
-@media screen and (max-width: 800px){
-    .wrap{
-        width: 100%;
-         
+.wrap .container{
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
     }
 
+
+.wrap .item{
+    display: flex;
+    width: 400;
+    
 }
+.wrap .key,
+.wrap .item{
+    margin: 10px;
+}
+
+.wrap .item h1{
+    padding-left: 50px;
+}
+
+.wrap .key{
+    display: flex;
+    margin: 30px auto;
+    
+}
+
+.wrap .key .left{
+   margin-right: 100px  ;
+    
+}
+
+.wrap .run{
+    color: turquoise;
+    height: 200px;
+    font-size: 30px;
+    
+    
+}
+.wrap .run img{
+    
+    border-radius: 50%;
+    padding: 60px;
+}
+
+@media screen and (max-width: 600px){
+    .wrap{
+       width: 420px;
+        margin: auto;
+    }
+
+    
+
+}
+
+
+
     
 
 
@@ -51,18 +99,27 @@
 <body>
 <div class="wrap">
     <div class="item"> 
-        <button onclick="gameStart()">開始遊戲</button>
+        <input type="button" value="開始遊戲" onclick="gameStart()" style="width:150px;height:50px;">
         <h1 id="score_id">0</h1>
     </div>
 
-<div class container>
+<div class="container">
     <canvas width="400" height="400" id="canvas_id"></canvas>
+</div>
+<div class="key">
 
+    <div class="left">
+    <input type="button" value="左" name="left" id="left" style="width:100px;height:50px;">
+   </div>
 
-    <button id="left">左</button>
-    <button id="right">右</button>
+    <div class="right">
+    <input type="button" value="右"  name="right" id="right" style="width:100px;height:50px;">
+</div>
 </div>
 
+<div class="run">
+<marquee   direction="right" height="200" behavior="alternate"><img src="01.jpg"></marquee>
+</div>
     </div>
 
 </body>
